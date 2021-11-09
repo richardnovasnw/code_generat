@@ -6,4 +6,3 @@ part 'details.g.dart';
 class Details {
   String name = 'Novas';
 }
- 

@@ -5,6 +5,12 @@ class ModelVisitor extends SimpleElementVisitor<dynamic> {
   String className;
 
   Map<String, dynamic> fields = <String, dynamic>{};
+  Map<String, dynamic> metaData = <String, dynamic>{};
+
+  @override
+  dynamic visitPropertyAccessorElement(PropertyAccessorElement element) {
+    metaData[element.name] = element.metadata;
+  }
 
   @override
   dynamic visitConstructorElement(ConstructorElement element) {
